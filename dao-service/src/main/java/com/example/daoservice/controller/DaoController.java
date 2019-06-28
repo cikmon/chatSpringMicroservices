@@ -17,7 +17,6 @@ public class DaoController {
 
     @GetMapping("/getAllMessages")
     public List<ChatMessageModel> getAll(){
-        System.out.println(chatMessageRepository.findAll().toString());
         return chatMessageRepository.findAll(); }
 
     @PostMapping("/addMessage")

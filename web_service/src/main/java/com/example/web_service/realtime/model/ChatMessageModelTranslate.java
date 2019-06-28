@@ -1,14 +1,25 @@
 package com.example.web_service.realtime.model;
 
+import java.util.Date;
+
 public class ChatMessageModelTranslate extends ChatMessageModel {
-    private String translate;
+    private String translate="3333333";
 
    public ChatMessageModelTranslate(ChatMessageModel chatMessageModel){
        super.id = chatMessageModel.id;
-       super.text = chatMessageModel.text;
+
+       if(chatMessageModel.text==""||chatMessageModel.text==null||chatMessageModel.text.trim().isEmpty() ) {
+           super.text = "";
+       }else{ super.text = chatMessageModel.text;}
+
        super.author = chatMessageModel.author;
        super.createDate = chatMessageModel.createDate;
+
+
+
     }
+
+
 
     public String getTranslate() {
         return translate;
@@ -19,11 +30,11 @@ public class ChatMessageModelTranslate extends ChatMessageModel {
     @Override
     public String toString() {
         return "{" +
-                "\"id\":\"" + id + '\"' +
-                ",\"text\":\"" + text + '\"' +
-                ",\"author\":\"" + author + '\"' +
-                ",\"createDate\":\"" + createDate + "\"" +
-                ",\"translate\":\"" + translate + "\"" +
+                "\"id\":\"" + super.id + '\"' +
+                ",\"text\":\"" + super.text + '\"' +
+                ",\"author\":\"" + super.author + '\"' +
+                ",\"createDate\":\"" + super.createDate + "\"" +
+                ",\"translate\":\"" + this.translate + "\"" +
                 '}';
     }
 }
