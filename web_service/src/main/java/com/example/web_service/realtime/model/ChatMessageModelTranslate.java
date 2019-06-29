@@ -1,7 +1,5 @@
 package com.example.web_service.realtime.model;
 
-import java.util.Date;
-
 public class ChatMessageModelTranslate extends ChatMessageModel {
     private String translate="3333333";
 
@@ -14,12 +12,7 @@ public class ChatMessageModelTranslate extends ChatMessageModel {
 
        super.author = chatMessageModel.author;
        super.createDate = chatMessageModel.createDate;
-
-
-
     }
-
-
 
     public String getTranslate() {
         return translate;

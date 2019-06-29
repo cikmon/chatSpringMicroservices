@@ -7,18 +7,13 @@ import java.util.Date;
  * @author huseyinbabal
  */
 public class ChatMessageModel {
-
-
     protected String id="1";
-
     protected String text="e";
     protected String author="jj";
     protected Date createDate=new Date();
 
     public ChatMessageModel() {
     }
-
-
 
     public ChatMessageModel(String text, String author, Date createDate) {
         this.text = text;

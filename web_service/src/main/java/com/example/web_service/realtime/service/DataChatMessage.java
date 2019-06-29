@@ -24,7 +24,7 @@ import java.util.List;
 public class DataChatMessage {
     @Autowired
     private DiscoveryClient discoveryClient;
-    private List<ChatMessageModel> chatMessageModelList;
+    private List<ChatMessageModel> chatMessageModelList = new ArrayList<>();
     private List<ChatMessageModelTranslate> chatMessageModelTransleteList = new ArrayList<>();
 
 
@@ -73,9 +73,8 @@ public class DataChatMessage {
         return "";
     }
 
-
-
     private List<ChatMessageModelTranslate> translate(List<ChatMessageModel> chatMessageModels){
+        System.out.println("3");
         List<ServiceInstance> instances = discoveryClient.getInstances("translate-service");
         if (instances != null && instances.size() > 0) {//todo: replace with a load balancing mechanism
             ServiceInstance serviceInstance = instances.get(0);
@@ -103,7 +102,9 @@ public class DataChatMessage {
         return chatMessageModelTransleteList;
     }
 
+
     private List<ChatMessageModel> getChatMessageModelList(){
+        System.out.println("1");
         List<ChatMessageModel> chatMessageModels = null;
 
         List<ServiceInstance> instances = discoveryClient.getInstances("dao-service");
@@ -123,6 +124,5 @@ public class DataChatMessage {
 
         return chatMessageModels;
     }
-
 
 }

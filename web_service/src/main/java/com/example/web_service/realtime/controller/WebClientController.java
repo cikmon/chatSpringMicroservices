@@ -38,12 +38,10 @@ public class WebClientController {
     @Autowired
     private DataChatMessage dataChatMessage;
 
-
     @GetMapping("/")
     public String handleRequest(Model model) {
         return "chat";
     }
-
 
     @RequestMapping("/login")
     public String login() {
@@ -52,7 +50,6 @@ public class WebClientController {
 
     @RequestMapping("/chat")
     public String chat(Model model) { return "chat"; }
-
 
     @RequestMapping(value = "/messages", method = RequestMethod.POST)
     @MessageMapping("/newMessage")
@@ -65,7 +62,5 @@ public class WebClientController {
     public HttpEntity list() {
         return new ResponseEntity(dataChatMessage.getChatMessageModelTransleteList(), HttpStatus.OK);
     }
-
-
 
 }
